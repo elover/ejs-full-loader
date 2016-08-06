@@ -13,9 +13,7 @@ module.exports = function (source) {
   opts.filename = path.relative(process.cwd(), this.resourcePath);
   var template = ejs.compile(source, opts);
 
-  console.log(template);
   var content = template({});
-
 
   return 'module.exports = ' + JSON.stringify(content) + ';';
 };
