@@ -11,6 +11,7 @@ module.exports = function (source) {
 
   // Use filenames relative to working dir, which should be project root
   opts.filename = path.relative(process.cwd(), this.resourcePath);
+  opts.root = process.cwd();
   var template = ejs.compile(source, opts);
 
   var content = template({});
